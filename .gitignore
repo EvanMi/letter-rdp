@@ -11,6 +11,10 @@ target/
 *.iws
 *.iml
 *.ipr
+*.vcs
+.idea/encodings.xml
+.idea/misc.xml
+.idea/uiDesigner.xml
 
 ### Eclipse ###
 .apt_generated

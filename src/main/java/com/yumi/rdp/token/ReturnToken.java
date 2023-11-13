@@ -6,9 +6,4 @@ public class ReturnToken extends Token<String> {
     public ReturnToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

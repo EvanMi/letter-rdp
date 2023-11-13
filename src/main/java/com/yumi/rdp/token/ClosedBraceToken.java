@@ -5,9 +5,4 @@ public class ClosedBraceToken extends Token<String> {
     public ClosedBraceToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

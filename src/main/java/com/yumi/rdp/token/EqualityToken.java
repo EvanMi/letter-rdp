@@ -5,9 +5,4 @@ public class EqualityToken extends EqualityOperatorToken{
     public EqualityToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

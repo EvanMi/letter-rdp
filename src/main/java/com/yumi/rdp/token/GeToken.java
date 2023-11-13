@@ -5,9 +5,4 @@ public class GeToken extends RelationalOperatorToken{
     public GeToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

@@ -6,9 +6,4 @@ public class SuperToken extends Token<String> {
     public SuperToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

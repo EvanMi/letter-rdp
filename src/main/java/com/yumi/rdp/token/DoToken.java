@@ -6,9 +6,4 @@ public class DoToken extends IterationToken {
     public DoToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

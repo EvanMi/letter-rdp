@@ -142,7 +142,7 @@ public class Parser {
             return this.variableStatement();
         } else if (this.lookaheadEq(IfToken.class)) {
             return this.ifStatement();
-        } else if (this.lookAhead instanceof IterationToken) {
+        } else if (this.lookaheadEq(IterationToken.class)) {
             return this.iterationStatement();
         } else if (this.lookaheadEq(DefToken.class)) {
             return this.functionDeclaration();
@@ -914,7 +914,7 @@ public class Parser {
     }
 
     private <T extends Token<?>> boolean lookaheadEq(Class<T> tokenType) {
-        return this.lookAhead.getClass() == tokenType;
+        return tokenType.isAssignableFrom(lookAhead.getClass());
     }
     private <T extends Token<?>> T eat(Class<T> typeClass) {
         final Token<?> token = this.lookAhead;

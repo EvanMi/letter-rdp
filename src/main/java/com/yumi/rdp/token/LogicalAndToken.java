@@ -5,9 +5,4 @@ public class LogicalAndToken extends OperatorToken{
     public LogicalAndToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

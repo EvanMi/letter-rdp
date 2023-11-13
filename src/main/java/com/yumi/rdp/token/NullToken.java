@@ -6,9 +6,4 @@ public class NullToken extends LiteralToken<String> {
     public NullToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

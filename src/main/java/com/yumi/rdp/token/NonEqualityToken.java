@@ -5,9 +5,4 @@ public class NonEqualityToken extends EqualityOperatorToken{
     public NonEqualityToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

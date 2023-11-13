@@ -6,9 +6,4 @@ public class DivAssignToken extends ComplexAssignToken {
     public DivAssignToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

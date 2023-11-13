@@ -5,9 +5,4 @@ public class FalseToken extends BooleanLiteralToken {
     public FalseToken(Boolean value) {
         super(value);
     }
-
-    @Override
-    public Boolean getValue() {
-        return INSTANCE.getValue();
-    }
 }

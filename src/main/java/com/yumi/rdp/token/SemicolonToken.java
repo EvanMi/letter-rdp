@@ -6,9 +6,4 @@ public class SemicolonToken extends Token<String> {
     public SemicolonToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

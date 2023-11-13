@@ -5,9 +5,4 @@ public class DotToken extends Token<String> {
     public DotToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

@@ -5,9 +5,4 @@ public class LetToken extends Token<String> {
     public LetToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

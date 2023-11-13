@@ -6,9 +6,4 @@ public class MulAssignToken extends ComplexAssignToken {
     public MulAssignToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

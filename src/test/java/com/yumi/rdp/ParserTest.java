@@ -11,7 +11,7 @@ public class ParserTest {
 
     private void parseAndAssertEquals(String program, String ast) {
         AstNode parse = parser.parse(program);
-        assertEquals(JSON.toJSONString(parse), JSON.parse(ast).toString());
+        assertEquals(JSON.parse(ast).toString(), JSON.toJSONString(parse));
     }
 
     @Test
@@ -168,6 +168,123 @@ public class ParserTest {
                 """;
         String program = """
                 ;
+                """;
+        parseAndAssertEquals(program, ast);
+    }
+
+    @Test
+    public void testAdditive() {
+        String ast = """
+                {
+                    "body":[
+                        {
+                            "expression":{
+                                "left":{
+                                    "value":2,
+                                    "type":"NumericLiteral"
+                                },
+                                "operator":{
+                                    "value":"+"
+                                },
+                                "right":{
+                                    "value":2,
+                                    "type":"NumericLiteral"
+                                },
+                                "type":"BinaryExpression"
+                            },
+                            "type":"ExpressionStatement"
+                        }
+                    ],
+                    "type":"Program"
+                }
+                """;
+        String program = """
+                2 + 2;
+                """;
+        parseAndAssertEquals(program, ast);
+    }
+
+    @Test
+    public void testNestAdditive() {
+        String ast = """
+                {
+                    "body":[
+                        {
+                            "expression":{
+                                "left":{
+                                    "left":{
+                                        "value":2,
+                                        "type":"NumericLiteral"
+                                    },
+                                    "operator":{
+                                        "value":"+"
+                                    },
+                                    "right":{
+                                        "value":2,
+                                        "type":"NumericLiteral"
+                                    },
+                                    "type":"BinaryExpression"
+                                },
+                                "operator":{
+                                    "value":"+"
+                                },
+                                "right":{
+                                    "value":2,
+                                    "type":"NumericLiteral"
+                                },
+                                "type":"BinaryExpression"
+                            },
+                            "type":"ExpressionStatement"
+                        }
+                    ],
+                    "type":"Program"
+                }
+                """;
+        String program = """
+                2 + 2 + 2;
+                """;
+        parseAndAssertEquals(program, ast);
+    }
+
+
+    @Test
+    public void testNestAdditiveWithParenthesis() {
+        String ast = """
+                {
+                    "body":[
+                        {
+                            "expression":{
+                                "left":{
+                                    "value":2,
+                                    "type":"NumericLiteral"
+                                },
+                                "operator":{
+                                    "value":"+"
+                                },
+                                "right":{
+                                    "left":{
+                                        "value":2,
+                                        "type":"NumericLiteral"
+                                    },
+                                    "operator":{
+                                        "value":"+"
+                                    },
+                                    "right":{
+                                        "value":2,
+                                        "type":"NumericLiteral"
+                                    },
+                                    "type":"BinaryExpression"
+                                },
+                                "type":"BinaryExpression"
+                            },
+                            "type":"ExpressionStatement"
+                        }
+                    ],
+                    "type":"Program"
+                }
+                """;
+        String program = """
+                2 + (2 + 2);
                 """;
         parseAndAssertEquals(program, ast);
     }

@@ -6,9 +6,4 @@ public class DefToken extends Token<String> {
     public DefToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

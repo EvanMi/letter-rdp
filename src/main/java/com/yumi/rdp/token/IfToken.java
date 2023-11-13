@@ -5,9 +5,4 @@ public class IfToken extends Token<String> {
     public IfToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

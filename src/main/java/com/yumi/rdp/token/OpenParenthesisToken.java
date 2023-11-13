@@ -5,9 +5,4 @@ public class OpenParenthesisToken extends Token<String> {
     public OpenParenthesisToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

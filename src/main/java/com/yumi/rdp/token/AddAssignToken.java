@@ -6,9 +6,4 @@ public class AddAssignToken extends ComplexAssignToken {
     public AddAssignToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

@@ -5,9 +5,4 @@ public class ClosedParenthesisToken extends Token<String> {
     public ClosedParenthesisToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

@@ -6,9 +6,4 @@ public class SimpleAssignToken extends AssignToken {
     public SimpleAssignToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

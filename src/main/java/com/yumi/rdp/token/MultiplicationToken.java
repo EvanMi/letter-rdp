@@ -7,9 +7,4 @@ public class MultiplicationToken extends AdditiveOperatorToken{
         super(value);
     }
 
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
-
 }

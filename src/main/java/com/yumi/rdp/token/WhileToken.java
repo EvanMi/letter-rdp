@@ -6,9 +6,4 @@ public class WhileToken extends IterationToken {
     public WhileToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

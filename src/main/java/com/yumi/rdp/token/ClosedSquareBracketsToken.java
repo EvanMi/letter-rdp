@@ -5,9 +5,4 @@ public class ClosedSquareBracketsToken extends Token<String> {
     public ClosedSquareBracketsToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

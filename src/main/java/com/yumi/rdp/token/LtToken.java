@@ -5,9 +5,4 @@ public class LtToken extends RelationalOperatorToken{
     public LtToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

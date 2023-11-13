@@ -5,9 +5,4 @@ public class ElseToken extends Token<String> {
     public ElseToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

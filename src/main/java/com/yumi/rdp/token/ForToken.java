@@ -6,9 +6,4 @@ public class ForToken extends IterationToken {
     public ForToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

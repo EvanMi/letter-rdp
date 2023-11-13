@@ -6,9 +6,4 @@ public class ThisToken extends Token<String> {
     public ThisToken(String value) {
         super(value);
     }
-
-    @Override
-    public String getValue() {
-        return INSTANCE.getValue();
-    }
 }

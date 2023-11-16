@@ -345,11 +345,9 @@ public class Parser {
     */
     private Statement ifStatement() {
         this.eat(IfToken.class);
-
         this.eat(OpenParenthesisToken.class);
         AstNode test = this.expression();
         this.eat(ClosedParenthesisToken.class);
-
         Statement consequent = this.statement();
 
         Statement alternate = null;
@@ -464,7 +462,6 @@ public class Parser {
     private ExpressionStatement expressionStatement() {
         AstNode expression = this.expression();
         this.eat(SemicolonToken.class);
-
         return new ExpressionStatement(expression);
     }
 
@@ -785,7 +782,7 @@ public class Parser {
             ;
      */
     private AstNode primaryExpression() {
-        if (this.lookAhead instanceof LiteralToken<?>) {
+        if (this.lookaheadEq(LiteralToken.class)) {
             return this.literal();
         } else if (this.lookaheadEq(OpenParenthesisToken.class)) {
             return this.parenthesizedExpression();
@@ -858,7 +855,7 @@ public class Parser {
             ;
      */
     private Literal literal() {
-        if (this.lookAhead instanceof BooleanLiteralToken) {
+        if (this.lookaheadEq(BooleanLiteralToken.class)) {
             return this.booleanLiteral(this.eat(BooleanLiteralToken.class).getValue());
         } else if (this.lookaheadEq(NumberToken.class)) {
             return this.numericLiteral();
@@ -867,7 +864,6 @@ public class Parser {
         } else if (this.lookaheadEq(NullToken.class)) {
             return this.nullLiteral();
         }
-
         throw new IllegalStateException("Literal: unexpected literal production");
     }
 
@@ -914,7 +910,7 @@ public class Parser {
     }
 
     private <T extends Token<?>> boolean lookaheadEq(Class<T> tokenType) {
-        return tokenType.isAssignableFrom(lookAhead.getClass());
+        return null != tokenType && tokenType.isAssignableFrom(lookAhead.getClass());
     }
     private <T extends Token<?>> T eat(Class<T> typeClass) {
         final Token<?> token = this.lookAhead;

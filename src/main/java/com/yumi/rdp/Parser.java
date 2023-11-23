@@ -105,12 +105,12 @@ public class Parser {
      *  | StatementList Statement -> Statement Statement Statement Statement
      *  ;
      */
-    private List<AstNode> statementList() {
+    private List<Statement> statementList() {
         return this.statementList(null);
     }
 
-    private List<AstNode> statementList(Class<? extends Token<?>> stopLookahead) {
-        final List<AstNode> statementList = new ArrayList<>();
+    private List<Statement> statementList(Class<? extends Token<?>> stopLookahead) {
+        final List<Statement> statementList = new ArrayList<>();
         statementList.add(this.statement());
 
         while (this.lookAhead != null && !this.lookaheadEq(stopLookahead)) {
@@ -445,7 +445,7 @@ public class Parser {
     private BlockStatement blockStatement() {
         this.eat(OpenBraceToken.class);
 
-        final List<AstNode> body = this.lookaheadEq(ClosedBraceToken.class)
+        final List<Statement> body = this.lookaheadEq(ClosedBraceToken.class)
                 ? List.of()
                 : this.statementList(ClosedBraceToken.class);
 
